@@ -46,10 +46,12 @@ private static final String HORIZONTAL_SEP = "-";
     public void print() {
         int[] maxWidths = headers != null ?
                 Arrays.stream(headers).mapToInt(String::length).toArray() : null;
-
+        System.out.println(maxWidths.length);
+       
         for (String[] cells : rows) {
             if (maxWidths == null) {
                 maxWidths = new int[cells.length];
+                 //System.out.println(cells.length);
             }
             if (cells.length != maxWidths.length) {
                 throw new IllegalArgumentException("Number of row-cells and headers should be consistent");
